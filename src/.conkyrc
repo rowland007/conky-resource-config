@@ -1,0 +1,107 @@
+#conky engine
+own_window yes
+own_window_hints above
+own_window_class Conky
+own_window_type override
+own_window_transparent yes
+
+#conky position
+alignment top_right
+gap_x 0
+gap_y 30
+
+#conky size
+maximum_width 250
+minimum_size 250 875
+
+#fonts and colors
+default_color cccccc
+default_outline_color cccccc
+default_shade_color cccccc
+use_xft yes
+xftfont Ubuntu:size=10
+uppercase no
+color0 000000 #black
+color1 ffffff #white
+color2 96d952 #mint green
+color3 ca051b #ubuntu red
+color4 ff6811 #ubuntu orange
+color5 fffb1f #ubuntu yellow
+color6 06204c #fedora blue
+color7 00ff00 #green
+color8 ff0000 #red
+color9 551a8b #purple
+
+#other settings
+background yes
+border_width 1
+cpu_avg_samples 2
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+stippled_borders 0
+update_interval 1.0
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+${font Neuropol:size=16}${voffset 0}${goto 100}${color2}Ubuntu 16.04${color}${font}  
+${voffset 0}${alignr}${color2}Xenial Xerus${color}  
+${voffset 0}${alignr}${color2}${kernel}${color}  
+${voffset 0}${alignr}${color2}${sysname} ${machine}${color}  
+    ${font Ubuntu Mono:size=50}${time %H}${font Ubuntu Mono:size=25}${voffset -20}:${time %M}${font}
+    ${voffset -27}${alignr}[${uptime}]  
+    ${voffset 0}${alignr}${time %A %d}  
+    ${voffset 0}${alignr}${time %B %Y}  
+
+  ${font}${color2}System ${stippled_hr}${color}${font}  
+    Entropy [${entropy_perc}%] ${alignr}[${entropy_avail} / ${entropy_poolsize}]  
+    ${voffset 5}${alignc}${cpugraph cpu0 30, 232}  
+    Core 1 ${goto 60}[${cpu cpu1}%] ${alignr}${cpubar cpu1 10,135}  
+    Core 2 ${goto 60}[${cpu cpu2}%] ${alignr}${cpubar cpu2 10,135}  
+    Core 3 ${goto 60}[${cpu cpu3}%] ${alignr}${cpubar cpu3 10,135}  
+    Core 4 ${goto 60}[${cpu cpu4}%] ${alignr}${cpubar cpu4 10,135}  
+
+  ${font}${color2}Memory ${stippled_hr}${color}${font}
+    RAM [${memperc}%] ${alignr} [${swapperc}%] Swap  
+    ${mem} ${alignr}${swap}  
+    ${membar 10,110}${alignr}${swapbar 10,110}  
+    ${alignc}${memgraph 30,232}
+
+  ${font}${color2}Network ${stippled_hr}${color}${font}
+    ${wireless_essid wlp3s0} [${wireless_link_qual_perc wlp3s0}%]${alignr}${wireless_bitrate wlp3s0}  
+    Local IP: ${addr wlp3s0}
+    ${color3}Public IP: ${color1}${texeci 3600 /usr/bin/ipcheck}
+    ${color9}VPN IP:${color1} ${addr tun0}
+    ${voffset 5}Down >>> ${downspeed wlp3s0} ${alignr}${upspeed wlp3s0} <<< Up  
+    ${color7}${downspeedgraph wlp3s0 30,110} ${alignr}${color8}${upspeedgraph wlp3s0 30,110}${color}  
+    Total >>> ${totaldown wlp3s0} ${alignr}${totalup wlp3s0} <<< Total  
+
+  ${font}${color2}Processes ${stippled_hr}${color}${font}
+    Total/Running: ${alignr}[${processes} / ${running_processes}]  
+    ${voffset 5}Name ${goto 135}PID ${goto 175}CPU ${goto 220}Mem${font}
+    ${voffset -10}${stippled_hr}
+      ${top name 1} ${goto 130}${top pid 1} ${goto 170} ${top cpu 1} ${goto 210} ${top mem 1}
+      ${top name 2} ${goto 130}${top pid 2} ${goto 170} ${top cpu 2} ${goto 210} ${top mem 2}
+      ${top name 3} ${goto 130}${top pid 3} ${goto 170} ${top cpu 3} ${goto 210} ${top mem 3}
+      ${top name 4} ${goto 130}${top pid 4} ${goto 170} ${top cpu 4} ${goto 210} ${top mem 4}
+      ${top name 5} ${goto 130}${top pid 5} ${goto 170} ${top cpu 5} ${goto 210} ${top mem 5}
+
+  ${font}${color2}SSD ${stippled_hr}${color}${font}
+    / ${goto 85}[${fs_used_perc /}%] ${fs_bar 8,125 /}
+      ${fs_type /}  ${goto 125}${fs_used /} / ${fs_size /}
+  ${font}${color2}External ${stippled_hr}${color}${font}
+    USB ${goto 85}${if_match "${fs_type /media/user/storage}" == "unknown"} Not Connected
+    ${else}[${fs_used_perc /media/user/storage}%] ${fs_bar 8,125 /media/user/storage}
+      ${fs_type /media/user/storage}  ${goto 125}${fs_used /media/user/storage} / ${fs_size /media/user/storage}
+      ${endif} 
+
+${image ~/.conky/bg-ubuntu.png -p -0,-0 -s 250x864}
