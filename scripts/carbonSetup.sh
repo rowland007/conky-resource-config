@@ -7,7 +7,7 @@
 #               use with Conky. It will then add the command into startup
 #               programs so Conky will start on boot.
 #Input:     bg-ubuntu.png
-            ipcheck.sh
+#           ipcheck.sh
 #Output:    ~/.local/share/images
 #           ~/.local/share/images/bg-ubuntu.png
 #           ~/.local/share/scripts
@@ -39,6 +39,7 @@ command -v conky >/dev/null 2>&1 ||
     }
 
 #Folder Variables
+CUR_DIR="$(pwd)"
 MAIN_RES_DIR="/home/$USER/.local/share"
 SCRIPTS="$MAIN_RES_DIR/scripts"
 IMAGES="$MAIN_RES_DIR/images"
@@ -76,7 +77,10 @@ echo "Adding Conky scripts."
 mv ipcheck.sh $SCRIPTS/
 chmod +x $SCRIPTS/ipcheck.sh
 echo "Adding background image."
-mv bg-ubuntu.png $IMAGES/
+mv ../resources/bg-ubuntu.png $IMAGES/
+
+#Move Conky configuration file
+mv ../src/conkyrc ~/.conkyrc
 
 #Restart Conky
 echo "Starting Conky."
