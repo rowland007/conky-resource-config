@@ -79,7 +79,7 @@ ${voffset 0}${alignr}${color2}${sysname} ${machine}${color}
   ${font}${color2}Network ${stippled_hr}${color}${font}
     ${wireless_essid wlp3s0} [${wireless_link_qual_perc wlp3s0}%]${alignr}${wireless_bitrate wlp3s0}  
     Local IP: ${addr wlp3s0}
-    ${color3}Public IP: ${color1}${texeci 3600 /usr/bin/ipcheck}
+    ${color3}Public IP: ${color1}${texeci 3600 ~/.local/share/scripts/ipcheck.sh}
     ${color9}VPN IP:${color1} ${addr tun0}
     ${voffset 5}Down >>> ${downspeed wlp3s0} ${alignr}${upspeed wlp3s0} <<< Up  
     ${color7}${downspeedgraph wlp3s0 30,110} ${alignr}${color8}${upspeedgraph wlp3s0 30,110}${color}  
@@ -104,4 +104,4 @@ ${voffset 0}${alignr}${color2}${sysname} ${machine}${color}
       ${fs_type /media/user/storage}  ${goto 125}${fs_used /media/user/storage} / ${fs_size /media/user/storage}
       ${endif} 
 
-${image ~/.conky/bg-ubuntu.png -p -0,-0 -s 250x864}
+${image ~/.local/share/images/bg-ubuntu.png -p -0,-0 -s 250x864}
