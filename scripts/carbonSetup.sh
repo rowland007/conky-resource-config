@@ -78,7 +78,8 @@ echo "Comment=Light-weight system monitor" >> $CONKY_AUTOSTART
 #Add scripts and images to folders
 echo "Adding Conky scripts."
 mv ipcheck.sh $SCRIPTS/
-chmod +x $SCRIPTS/ipcheck.sh
+mv conkyRestart.sh $SCRIPTS/
+chmod +x $SCRIPTS/*
 echo "Adding background image."
 mv ../resources/bg-ubuntu.png $IMAGES/
 
