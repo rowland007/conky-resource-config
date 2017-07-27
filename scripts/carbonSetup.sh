@@ -12,6 +12,7 @@
 #           ~/.local/share/images/bg-ubuntu.png
 #           ~/.local/share/scripts
 #           ~/.local/share/scripts/ipcheck.sh
+#           ~/.local/share/scripts/conkyRestart.sh
 #           ~/.config/autostart/conky.desktop           
 #Usage:     Make this script executable and place it in a folder with the
 #           associated .conkyrc file and background image. Then run this
@@ -28,6 +29,8 @@
 #Modifications:
 #Date                Comment
 #----    ------------------------------------------------
+#26JUL17    Added conkyRestart.sh to scripts that will be installed
+#26JUL17    Modified startup desktop file to run conkyRestart.sh
 #************************************************************************/
 
 #Check to see if Conky is installed
@@ -63,7 +66,7 @@ echo "Adding Conky to startup."
 touch $CONKY_AUTOSTART
 echo "[Desktop Entry]" >> $CONKY_AUTOSTART
 echo "Type=Application" >> $CONKY_AUTOSTART
-echo "Exec=conky 2> /dev/null" >> $CONKY_AUTOSTART
+echo "Exec=/home/$USER/.local/share/scripts/conkyRestart.sh" >> $CONKY_AUTOSTART
 echo "Hidden=false" >> $CONKY_AUTOSTART
 echo "NoDisplay=false" >> $CONKY_AUTOSTART
 echo "X-GNOME-Autostart-enabled=true" >> $CONKY_AUTOSTART
