@@ -1,11 +1,24 @@
-## Conky Resource Configuration File
+# Conky Resource Configuration File
 
 This is my personal configuration file. Information below is more about **Conky**.
+
+### Purpose
+
+This repository is to make my Conky configuration more streamlined. I use to keep a copy of my `.conkyrc` file but would always have to modify it and also add the image and other scripts to get the overall experience I want. Through a series of scripts, it will add Conky to the startup applications and its required scripts.
+
+### TODO
+
+- [x] Add: Retrieve Public IP Script
+- [x] Add: Laptop Setup Script
+- [x] Add: Startup Application File (conky.desktop)
+- [ ] Make: Turn repository into `.deb` package
+
+----
 
 **Conky** is a free, light-weight system monitor for X, that displays
 any kind of information on your desktop.
 
-Grab the [latest release from GitHub](https://github.com/brndnmtthws/conky/releases/latest). [![Build Status](https://travis-ci.org/brndnmtthws/conky.png)](https://travis-ci.org/brndnmtthws/conky)
+Grab the [latest Conky release from GitHub](https://github.com/brndnmtthws/conky/releases/latest). [![Build Status](https://travis-ci.org/brndnmtthws/conky.png)](https://travis-ci.org/brndnmtthws/conky)
 
 ### Features
 
