@@ -1,6 +1,7 @@
 # Conky Resource Configuration File
 
 This is my personal configuration file. Information below is more about **Conky**.
+[![Build Status](https://img.shields.io/badge/stable-passing-green.svg)](https://github.com/rowland007/conky-resource-config/tree/stable-carbon) [![Build Status](https://img.shields.io/badge/development-passing-green.svg)](https://github.com/rowland007/conky-resource-config/tree/dev-carbon) [![Build Status](https://img.shields.io/badge/version-2.0.1-blue.svg)](https://github.com/rowland007/conky-resource-config/releases)
 
 ### Purpose
 
@@ -11,7 +12,7 @@ This repository is to make my Conky configuration more streamlined. I use to kee
 - [x] Add: Retrieve Public IP Script
 - [x] Add: Laptop Setup Script
 - [x] Add: Startup Application File (conky.desktop)
-- [ ] Make: Turn repository into `.deb` package
+- [ ] Make: Turn repository into `.deb` package [![Build Status](https://img.shields.io/badge/debian-fail-red.svg)](https://github.com/rowland007/conky-resource-config/tree/feature-debian_package)
 
 ----
 
