@@ -1,7 +1,7 @@
 # Creating a Debian package
-
+[![Build Status](https://img.shields.io/badge/build-fail-red.svg)]
 ### Structure of a Debian package
-
+```
 conky-resource-config/
 └── DEBIAN
     ├── changelog
@@ -19,6 +19,7 @@ conky-resource-config/
     │   └── format
     └── src
         └── conkyrc
+```
 
 ### Requirements
 -   `build-essential`
